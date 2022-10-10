@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { productsDatabase } from '../../database/products';
+import { getProducts, productsDatabase } from '../../database/products';
 
 export default function DisplayProducts(props) {
   return (
@@ -19,10 +19,19 @@ export default function DisplayProducts(props) {
   );
 }
 
-export function getServerSideProps() {
+// export function getServerSideProps() {
+//   return {
+//     props: {
+//       products: productsDatabase,
+//     },
+//   };
+// }
+
+export async function getServerSideProps() {
+  const products = await getProducts();
   return {
     props: {
-      products: productsDatabase,
+      products: products,
     },
   };
 }
