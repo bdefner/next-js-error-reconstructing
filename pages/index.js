@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home(props) {
   return (
@@ -7,28 +8,7 @@ export default function Home(props) {
         <title>Home</title>
       </Head>
       <main>
-        {' '}
-        This is the main page
-        <hr />
-        <p>variable in index.js: {props.variable}</p>
-        <p>setVariable in index.js:</p>{' '}
-        <button
-          onClick={() => {
-            props.setVariable(1);
-          }}
-        >
-          {' '}
-          to 1
-        </button>
-        <button
-          onClick={() => {
-            props.setVariable(0);
-          }}
-        >
-          {' '}
-          to 0
-        </button>
-        <hr />
+        <Link href="/products"> To the products page</Link>
       </main>
     </div>
   );
