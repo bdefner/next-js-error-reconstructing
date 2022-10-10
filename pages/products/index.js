@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProducts, productsDatabase } from '../../database/products';
+import { getProducts } from '../../database/products';
 
 export default function DisplayProducts(props) {
   return (
